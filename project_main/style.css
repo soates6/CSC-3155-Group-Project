@@ -15,7 +15,7 @@
     margin: 0;
   }
   
-  .login-container {
+  .login-container, .register-container {
     background-color: #ffffff;
     width: 100%;
     max-width: 400px;
@@ -62,7 +62,7 @@
     background-color: #f9fafb;
   }
   
-  .login-btn {
+  .login-btn, .register-btn {
     width: 100%;
     padding: 10px;
     font-size: 16px;
@@ -78,18 +78,18 @@
     background-color: #ffbb13;
   }
   
-  .register-link {
+  .register-link, .login-link {
     margin-top: 1em;
     font-size: 14px;
     color: #666666;
   }
   
-  .register-link a {
+  .register-link a, .login-link a {
     color: #ffbb13;
     text-decoration: none;
   }
   
-  .register-link a:hover {
+  .register-link a:hover, .login-link a:hover {
     text-decoration: underline;
   }
   
