@@ -15,7 +15,7 @@
     margin: 0;
   }
   
-  .login-container {
+  .login-container, .register-container {
     background-color: #ffffff;
     width: 100%;
     max-width: 400px;
