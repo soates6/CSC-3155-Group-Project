@@ -1,12 +1,17 @@
-from fastapi import FastAPI, Depends, HTTPException, status
+import os
+from fastapi import FastAPI, Depends, HTTPException
 from sqlalchemy.orm import Session
-from .models import Base, User, engine, SessionLocal
-from .schemas import UserCreate, UserResponse
-from .utils import create_confirmation_token, send_confirmation_email, verify_confirmation_token
+from dotenv import load_dotenv
+from models import Base, User, engine, SessionLocal
+from schemas import UserCreate, UserResponse
+from jwt_utils import create_confirmation_token, verify_confirmation_token
+from email_utils import send_confirmation_email
+
+load_dotenv()  # Load environment variables
 
 app = FastAPI()
 
-# Create tables
+# Create the database tables
 Base.metadata.create_all(bind=engine)
 
 def get_db():
@@ -45,3 +50,7 @@ def confirm_email(token: str, db: Session = Depends(get_db)):
     user.confirmed = True
     db.commit()
     return {"message": "Email confirmed successfully!"}
+
+@app.get("/")
+async def read_root():
+    return {"Hello": "World"}
