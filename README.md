@@ -12,6 +12,22 @@ Description:
     5) Contact information for the company or employer doesn't exist.
 
 
-Technologies used:
+Technologies used (Before changes):
   Frontend: HTML, Javascript
   Backend: FastAPI, Python
+
+Technologies used (After changes):
+  Frontend: HTML, Javascript, CSS
+  Backend: Python, Django Framework, SQL
+
+Sprint 0: Nov 4 - Nov 8
+
+Working on implementing some pages using Javascript and HTML.
+Still figuring out how to implement the backend in order to make sure that the email verification system works.
+Working on making sure that the filter system also is meeting our requiprements but not familiar enough with how to make it work.
+
+Spring 1: Nov 11 - Nov 15
+
+Transition project from Javascript into Python to meet with class expectations.
+Fixing some of the sites so that it transitions into HTML
+Working on backend using Django Framework from the tutorial.
