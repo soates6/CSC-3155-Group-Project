@@ -16,18 +16,23 @@
     
     <!-- Login Form -->
     <h2>Login</h2>
-    <form action="#" method="post">
+
+    <form action="{% url 'login' %}" method="post">
+      {% csrf_token %}
+      <input type="hidden" name="next" value="{% url 'home' %}">
       <div class="input-group">
-        <label for="username">Username</label>
-        <input type="text" id="username" name="username" required>
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" required>
       </div>
       <div class="input-group">
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" required>
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required>
       </div>
       <button type="submit" class="login-btn">Log In</button>
-    </form>
-    <p class="register-link">Don't have an account?  <a href="{% url 'register' %}">Register</a></p>
+  </form>
+  
+
+    <p class="register-link">Don't have an account? <a href="{% url 'register' %}">Register</a></p>
   </div>
 </body>
 </html>
