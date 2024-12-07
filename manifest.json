@@ -1,0 +1,32 @@
+{
+    "name": "SafeApply",
+    "version": "0.1.0",
+    "description": "Get warnings about suspicous job postings",
+    "permissions": ["storage", "tabs"],
+    "host_permissions": ["https://%2A.indeed.com/*"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://%2A.indeed.com/*"],
+        "js": ["contentScript.js"]
+      }
+    ],
+    "web_accessible_resources": [
+      {
+        "resources": [
+          "SafeApplyLogo.png"
+        ],
+        "matches": ["https://%2A.indeed.com/*"]
+      }
+    ],
+    "action": {
+      "default_icon": {
+        "32": "SafeApplyLogo.png"
+      },
+      "default_title": "SafeApplyLogo",
+      "default_popup": "index.html"
+    },
+    "manifest_version": 3
+}
