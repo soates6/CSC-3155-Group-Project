@@ -118,7 +118,7 @@
     font-size: 14px;
     color: #333333;
     margin-bottom: 4px;
-    display: block;
+    display: inline;
 }
 
 .filter-group input[type="range"] {
@@ -379,6 +379,8 @@ h2 {
 .container a:hover {
     text-decoration: underline;
 }
+
+
 
 
 
