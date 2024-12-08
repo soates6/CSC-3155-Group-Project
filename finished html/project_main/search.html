@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SafeApply - Job Search</title>
+  <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="logo-container">
+      <img src="images/SafeApplyLogo.png" alt="SafeApply Logo" class="logo">
+    </div>
+    <nav class="nav-links">
+      <a href="home.html">Home</a>
+      <a href="search.html">Browse Jobs</a>
+      <a href="profiles.html">Profile</a>
+      <a href="#">Log Out</a>
+    </nav>
+  </header>
+  <!-- Search Page Container -->
+  <div class="container">
+    <!-- Logo -->
+    <div class="logo-container">
+      <img src="images/SafeApplyLogo.png" alt="SafeApply Logo" class="logo">
+    </div>
+
+    <!-- Search Bar Section -->
+    <h2>Find Your Next Job</h2>
+    <form class="search-form">
+      <div class="input-group">
+        <label for="keywords">Job Title, Keywords</label>
+        <input type="text" id="keywords" placeholder="e.g., Software Developer, Marketing">
+      </div>
+      
+      <div class="input-group">
+        <label for="location">Location</label>
+        <input type="text" id="location" placeholder="e.g., New York, Remote">
+      </div>
+
+      <!-- Filters Section -->
+      <div class="filters">
+        <h3>Filters</h3>
+        
+        <!-- Location Filter -->
+        <div class="filter-group">
+          <label for="distance-slider">Distance (miles)</label>
+          <input type="range" id="distance-slider" min="1" max="200" value="50" step="1">
+          <p id="distance-value">50 miles</p>
+          <script>
+            const slider = document.getElementById('distance-slider');
+            const distanceValue = document.getElementById('distance-value');
+            slider.addEventListener('input', () => {
+              distanceValue.textContent = `${slider.value} miles`;
+            });
+          </script>
+          <div class="map-container">
+            <p>Map displaying your location:</p>
+            <div id="map">
+              <div class="google-map">
+                <iframe src="https://www.google.com/maps/embed?pb=#" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>    
+            </div>
+          </div>
+        </div>
+
+        <!-- Type of Job Filter -->
+        <div class="filter-group">
+          <label>Type of Job</label>
+          <div>
+            <input type="checkbox" id="internship" name="job-type">
+            <label for="internship">Internship</label>
+          </div>
+          <div>
+            <input type="checkbox" id="entry" name="job-type">
+            <label for="entry">Entry Position</label>
+          </div>
+          <div>
+            <input type="checkbox" id="part-time" name="job-type">
+            <label for="part-time">Part-Time</label>
+          </div>
+        </div>
+
+        <!-- Industry Filter -->
+        <div class="filter-group">
+          <label for="industry">Industry</label>
+          <select id="industry">
+            <option value="finance">Finance</option>
+            <option value="bank">Bank</option>
+            <option value="medicine">Medicine</option>
+            <option value="agriculture">Agriculture</option>
+            <option value="hospitality">Hospitality</option>
+            <option value="sports">Sports</option>
+          </select>
+        </div>
+
+        <!-- Job Title Filter -->
+        <div class="filter-group">
+          <label for="job-title">Job Title</label>
+          <select id="job-title">
+            <option value="cybersecurity">Cybersecurity</option>
+            <option value="data-analyst">Data Analyst</option>
+            <option value="software-engineer">Software Engineer</option>
+          </select>
+        </div>
+
+        <!-- Annual Wage Filter -->
+        <div class="filter-group">
+          <label for="wage-slider">Annual Wage ($)</label>
+          <input type="range" id="wage-slider" min="0" max="120000" value="60000" step="1000">
+          <p id="wage-value">$60,000</p>
+          <script>
+            const wageSlider = document.getElementById('wage-slider');
+            const wageValue = document.getElementById('wage-value');
+            wageSlider.addEventListener('input', () => {
+              wageValue.textContent = `$${parseInt(wageSlider.value).toLocaleString()}`;
+            });
+          </script>
+        </div>
+      </div>
+
+      <button type="submit" class="btn">Search</button>
+    </form>
+
+    <!-- Results Section -->
+    <div class="results">
+      <h3>Job Results</h3>
+      <!-- Sample Job Cards -->
+      <div class="job-card">
+        <h4>Software Developer</h4>
+        <p><strong>Company:</strong> Tech Solutions Inc.</p>
+        <p><strong>Location:</strong> Remote</p>
+        <p><strong>Status:</strong> <span class="status-flag">Potentially Fake</span></p>
+        <button class="apply-btn">Apply Now</button>
+      </div>
+
+      <div class="job-card">
+        <h4>Marketing Specialist</h4>
+        <p><strong>Company:</strong> Creative Media Ltd.</p>
+        <p><strong>Location:</strong> New York</p>
+        <p><strong>Status:</strong> Verified</p>
+        <button class="apply-btn">Apply Now</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <nav>
+      <P>Contact info: SafeApply.contact@gmail.com</P>
+      <a href="terms_service.html">Terms of service</a>
+    </nav>
+    </footer>
+</body>
+</html>
