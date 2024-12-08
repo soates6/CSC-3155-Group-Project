@@ -246,20 +246,23 @@
   }
 /* footer styleing */
 footer { 
-    position: fixed;
-    
-    text-align: center; 
-    padding: 1em 0; 
-    bottom: 0;
-    margin: 0 10px;
-    color: #ffbb13;
-    font-weight: bold;
-    text-decoration: none;
-    font-size: 14px;
-    text-decoration: underline;
+    position: fixed; 
+    bottom: 0; 
+    width: 100%; /* Ensure footer spans full width */
+     background-color: white; /* Set background color to white */ 
+     text-align: center;
+      padding: 5px;
+      color: #333; /* Text color for contrast */
+       font-weight: bold;
+        text-decoration: none; 
+       font-size: 12px; 
+    } 
+footer nav { 
+        display: flex; 
+         justify-content: center;
+          align-items: center;
+         gap: 50px; /* Space between items */ 
 }
-
-
 
 .nav-links {
   display: flex;
@@ -295,18 +298,23 @@ footer {
     height: auto; 
     margin: 0 70px; /* Adjust the value to increase/decrease space */ 
 }
-.frame-container { 
-    position: relative;
-    display: inline-block; 
-} 
+.frame-container { position: relative;
+     display: inline-block; 
+    } 
 .frame-container img.frame { 
-    position: absolute; 
-    top: 0; 
-    left: 0;
-    width: 200px; /* Adjust width to match the underlying image */ 
-    height: 150px;
+    position: absolute;
+     top: 0;
+      left: 0; 
+       width: 160px; /* Adjust the value to make the frame bigger */ height: auto; z-index: 1; /* Ensure the frame is below the header */
+     } 
+.header { 
+    position: fixed;
+     top: 0; 
+     left: 0;
+     width: 100%;
+    background-color: #ffffff;
+     z-index: 2; /* Ensure the header is above the frame */
 }
-
 
 
 .logo {
