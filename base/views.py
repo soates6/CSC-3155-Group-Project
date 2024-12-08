@@ -4,13 +4,6 @@ from .forms import RegisterForm, LoginForm
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
-from .job_scraper_utils import configure_webdriver, search_jobs, scrape_job_data, clean_data, send_email
-from django.http import JsonResponse
-import os
-from dotenv import load_dotenv
-
-load_dotenv()
-
 
 def home(request):
     return render(request, 'home.html')
@@ -59,34 +52,3 @@ def logout_view(request):
 
 def home_view(request):
     return render(request, 'home.html')
-
-def scrape_jobs_view(request):
-    if request.method == "GET":
-        job_position = request.GET.get('job_position', 'web developer')
-        job_location = request.GET.get('job_location', 'remote')
-        country = request.GET.get('country', 'https://www.indeed.com')
-        date_posted = request.GET.get('date_posted', 20)
-
-        try:
-            driver = configure_webdriver()
-            full_url = search_jobs(driver, country, job_position, job_location, date_posted)
-            df = scrape_job_data(driver, country)
-
-            if df.shape[0] == 1:
-                return JsonResponse({'message': 'No results found for the given criteria.', 'url': full_url})
-
-            cleaned_df = clean_data(df)
-            csv_file = cleaned_df.to_csv(index=False)
-
-            return JsonResponse({'message': 'Job scraping completed successfully!', 'data': cleaned_df.to_dict()})
-        except Exception as e:
-            return JsonResponse({'error': str(e)})
-        finally:
-            driver.quit()
-
-def job_scraper_home(request):
-    return render(request, 'job_scraper/home.html')
-
-def scrape_jobs(request):
-    return render(request, 'job_scraper/results.html')
-

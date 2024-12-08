@@ -16,9 +16,5 @@ urlpatterns = [
     path('search/', views.search, name='search'),
     path('terms/', views.terms_service, name='terms'),
 
-    # Job scraper
-    path('scrape-jobs/', views.scrape_jobs_view, name='scrape_jobs'),
-    path('', views.job_scraper_home, name='job_scraper_home'),
-    path('results/', views.scrape_jobs, name='scrape_jobs'),
 ]
 
