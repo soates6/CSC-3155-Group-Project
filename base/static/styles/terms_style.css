@@ -1,5 +1,4 @@
-/* General Container Styling for Terms Page */
-
+/* General Container Styling for Terms_Service Page */
 
 .container {
     margin-top: 20px;
@@ -10,8 +9,20 @@
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     margin: 30px auto;
-    text-align: left;
+    text-align: center;
     line-height: 1.6;
+}
+
+.container h1, 
+.container h2, 
+.container p {
+    text-align: center;
+}
+
+/* List Styling */
+.container ul {
+    text-align: center;
+    margin: 0 auto;
 }
 
 /* Heading Styles */

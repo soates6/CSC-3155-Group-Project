@@ -3,6 +3,7 @@ from django.contrib.auth import login, authenticate, logout
 from .forms import RegisterForm, LoginForm
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from .models import JobPost
 
 
 def home(request):
@@ -52,3 +53,7 @@ def logout_view(request):
 
 def home_view(request):
     return render(request, 'home.html')
+
+def job_list(request):
+    jobs = JobPost.objects.all()
+    return render(request, 'job_list.html', {'jobs': jobs})

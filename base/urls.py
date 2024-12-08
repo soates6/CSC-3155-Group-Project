@@ -14,7 +14,7 @@ urlpatterns = [
 
     # Additional pages
     path('search/', views.search, name='search'),
-    path('terms/', views.terms_service, name='terms'),
-
+    path('terms_service', views.terms_service, name='terms_service'),
+    path('jobs/', views.job_list, name='job_list'),
 ]
 
