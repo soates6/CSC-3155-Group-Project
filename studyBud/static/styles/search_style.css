@@ -1,0 +1,113 @@
+/* Existing styles above... */
+
+/* Search Container Styling */
+.search-container {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    margin: 0 auto;
+  }
+  
+  .search-container h2 {
+    font-size: 24px;
+    color: #333333;
+    margin-bottom: 20px;
+  }
+  
+  /* Search Form Styling */
+  .search-form .input-group {
+    margin-bottom: 15px;
+    text-align: left;
+  }
+  
+  .search-form .input-group label {
+    font-size: 14px;
+    color: #333333;
+    margin-bottom: 4px;
+  }
+  
+  .search-form .input-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9fafb;
+  }
+  
+  .search-btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #ffbb13;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .search-btn:hover {
+    background-color: #e6a50e;
+  }
+  
+  /* Results Section Styling */
+  .results {
+    margin-top: 30px;
+    text-align: left;
+  }
+  
+  .results h3 {
+    font-size: 20px;
+    color: #333333;
+    margin-bottom: 15px;
+  }
+  
+  /* Job Card Styling */
+  .job-card {
+    background-color: #ffffff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+  }
+  
+  .job-card:hover {
+    transform: translateY(-2px);
+  }
+  
+  .job-card h4 {
+    font-size: 18px;
+    color: #333333;
+    margin-bottom: 5px;
+  }
+  
+  .job-card p {
+    font-size: 14px;
+    color: #666666;
+  }
+  
+  .status-flag {
+    color: #ff0000;
+  }
+  
+  .apply-btn {
+    padding: 8px 16px;
+    font-size: 14px;
+    color: #ffffff;
+    background-color: #4f46e5;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .apply-btn:hover {
+    background-color: #4338ca;
+  }
+  
