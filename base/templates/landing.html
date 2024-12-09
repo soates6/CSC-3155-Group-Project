@@ -21,14 +21,14 @@
 
     <!-- Action Buttons -->
     <div class="button-group">
-      <a href="login.html" class="btn">Log In</a>
-      <a href="register.html" class="btn">Register</a>
+      <a href="{% url 'login' %}" class="btn">Log In</a>
+      <a href="{% url 'register' %}" class="btn">Register</a>
     </div>
   </div>
   <footer>
     <nav>
       <P>Contact info: SafeApply.contact@gmail.com</P>
-      <a href="terms_service.html">Terms of service</a>
+      <a href="{% url 'terms_service' %}">Terms of service</a>
     </nav>
     </footer>
 </body>
