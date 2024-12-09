@@ -1,12 +1,12 @@
 import csv
-from base.models import JobPost
+from base.models import Joblisting
 
 def run():
     with open('data/mockjobdataset.csv', 'r') as file:
         reader = csv.DictReader(file)
         for row in reader:
             print(f"Importing job: {row['title']} at {row['company']}")
-            JobPost.objects.create(
+            Joblisting.objects.create(
                 title=row['title'],
                 company=row['company'],
                 start_date=row['start_date'] if row['start_date'] else None,
