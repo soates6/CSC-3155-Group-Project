@@ -52,6 +52,15 @@
         <button type="submit" class="btn">Register</button>
       </form>
       <p class="login-link">Already have an account? <a href="{% url 'login' %}">Log in</a></p>
+
+    <!--Successful Registration-->
+    {% if messages %}
+      <script>
+        {% for message in messages %}
+          alert("{{message | escapejs }}");
+        {% endfor %}
+    {% endif %}
+      </script>
   </div>
   
 </body>
