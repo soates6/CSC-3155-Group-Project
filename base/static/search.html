@@ -1,16 +1,15 @@
-{% static load %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SafeApply - Job Search</title>
-  <link rel="stylesheet" href="{% static 'styles/styles.css' %}">
+  <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
   <header class="header">
     <div class="logo-container">
-      <img src="{% static 'images/SafeApplyLogo.png %}" alt="SafeApply Logo" class="logo">
+      <img src="images/SafeApplyLogo.png" alt="SafeApply Logo" class="logo">
     </div>
     <nav class="nav-links">
       <a href="home.html">Home</a>
@@ -45,24 +44,12 @@
         
         <!-- Location Filter -->
         <div class="filter-group">
-          <label for="distance-slider">Distance (miles)</label>
-          <input type="range" id="distance-slider" min="1" max="200" value="50" step="1">
-          <p id="distance-value">50 miles</p>
-          <script>
-            const slider = document.getElementById('distance-slider');
-            const distanceValue = document.getElementById('distance-value');
-            slider.addEventListener('input', () => {
-              distanceValue.textContent = `${slider.value} miles`;
-            });
-          </script>
-          <div class="map-container">
-            <p>Map displaying your location:</p>
-            <div id="map">
-              <div class="google-map">
-                <iframe src="https://www.google.com/maps/embed?pb=#" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>    
-            </div>
-          </div>
+          <label for="location">Location</label>
+          <select id="location">
+            <option value="Charlotte">Charlotte</option>
+            <option value="Raleigh">Raleigh</option>
+            <option value="Greensboro">Greensboro</option>
+          </select>
         </div>
 
         <!-- Type of Job Filter -->
@@ -130,20 +117,21 @@
         <div class="job-card">
           <h4>{{ job.title }}</h4>
           <p><strong>Company:</strong> {{ job.company }}</p>
-          <p><strong>Date Posted:</strong> {{ job.date_posted }}</p>
           <p><strong>Location:</strong> {{ job.location }}</p>
+          <p><strong>Status:</strong> {{ job.status }}</p>
           <p><strong>Salary:</strong> ${{ job.salary|floatformat:0 }}</p>
-          <p><strong>Duration:</strong> {{ job.duration }}</p>
-          <p><strong>Job Requirements:</strong> {{ job.job_requirements }}</p>
-          <p><strong>Required Qualifications:</strong> {{ job.required_qualifications }}</p>
           <p><strong>Description:</strong> {{ job.description }}</p>
-          <p><strong>Status:</strong> <span class="status-flag">{{ job.status }}</span></p>
-          <button class="apply-btn">Apply Now</button>
+          <p><strong>Duration:</strong> {{ job.duration }}</p>
+          <p><strong>Requirements:</strong> {{ job.job_requirements }}</p>
+          <p><strong>Qualifications:</strong> {{ job.required_qualifications }}</p>
         </div>
       {% empty %}
-        <p>No jobs found. Try adjusting your filters.</p>
+        <p>No jobs found for the selected city.</p>
       {% endfor %}
     </div>
+    </div>
+  </div>
+
   <footer>
     <nav>
       <P>Contact info: SafeApply.contact@gmail.com</P>
