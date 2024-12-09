@@ -27,13 +27,13 @@
       </div>
       <button type="submit" class="btn">Log In</button>
     </form>
-    <p class="register-link">Don't have an account? <a href="register.html">Register</a></p>
+    <p class="register-link">Don't have an account? <a href="{% url 'register' %}">Register</a></p>
   </div>
 
   <footer>
     <nav>
       <P>Contact info: SafeApply.contact@gmail.com</P>
-      <a href="terms_service.html">Terms of service</a>
+      <a href="{% url 'terms_service' %}">Terms of service</a>
     </nav>
     </footer>
 </body>
