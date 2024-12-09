@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate, logout
+from django.contrib.auth.models import User
 from .forms import RegisterForm, LoginForm
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
@@ -16,6 +17,19 @@ def login_view(request):
     return render(request, 'login.html')
 
 def register(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+
+        # Validate and create the user
+        if User.objects.filter(username=username).exists():
+            messages.error(request, 'Username already exists.')
+        else:
+            User.objects.create_user(username=username, password=password)
+            messages.success(request, 'Account created successfully!')
+            # Redirect to login page after successful registration
+            return redirect('login')
+
     return render(request, 'register.html')
 
 def search(request):
