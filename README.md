@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # CSC-3155-Group-Project
 
 Description:
@@ -32,24 +31,18 @@ Spring 1: Nov 11 - Nov 15
 Transition project from Javascript into Python to meet with class expectations.
 Fixing some of the sites so that it transitions into HTML
 Working on backend using Django Framework from the tutorial.
+
+Sprint 2: November 16 - November 31
+Finish implementing test cases for the project
+Making sure that the project runs and the test data is properly compiling.
+Publish final project
+
 =======
-<div align="center">
-<img width="30%" src="https://user-images.githubusercontent.com/72341453/134747028-7e2d90cc-a92f-4f66-815e-54a0d50cca54.PNG">
-
-# StudyBuddy
-</div>
-
-### Cloning the repository
-
---> Clone the repository using the command below :
-```bash
-git clone https://github.com/divanov11/StudyBud.git
-
-```
-
 --> Move into the directory where we have the project files : 
+
+
 ```bash
-cd StudyBud
+cd CSC-3155-Group-Project
 
 ```
 
@@ -86,29 +79,3 @@ python manage.py runserver
 ```
 
 > ⚠ Then, the development server will be started at http://127.0.0.1:8000/
-
-#
-
-### App Preview :
-
-<table width="100%"> 
-<tr>
-<td width="50%">      
-&nbsp; 
-<br>
-<p align="center">
-  Feed Home
-</p>
-<img src="https://user-images.githubusercontent.com/72341453/134747262-0a92233d-8010-40f8-84c5-8d94895aac44.PNG">
-</td> 
-<td width="50%">
-<br>
-<p align="center">
-  Room Conversation Preview
-</p>
-<img src="https://user-images.githubusercontent.com/72341453/134747155-3ca5b55f-b064-4741-aeae-abe90bddf41e.PNG">  
-</td>
-</table>
-
-
->>>>>>> 494dd696b28484e966970fc1a1e3b863a792b3d4
