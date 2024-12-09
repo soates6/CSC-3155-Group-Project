@@ -17,8 +17,13 @@
       <a href="{% url 'home' %}">Home</a>
       <a href="{% url 'search' %}">Browse Jobs</a>
       <a href="{% url 'profiles' %}">Profile</a>
-      <a href="#">Log Out</a>
+      {% if user.is_authenticated %}
+        <a href="{% url 'logout' %}">Log Out</a>
+      {% else %}
+        <a href="{% url 'login' %}">Log In</a>
+      {% endif %}
     </nav>
+
   </header>
   
   <!-- Welcome Section -->
@@ -26,6 +31,7 @@
     <h1>Welcome to SafeApply</h1>
     <p>Your trusted platform to find legitimate job opportunities and avoid fake recruiters.</p>
     <a href="{% url 'search' %}" class="btn">Browse Jobs</a>
+    <br><br><p>Don't have an account? <a href="{% url 'register' %}"> Click here to register.</p>
   </section>
   
   <footer>
