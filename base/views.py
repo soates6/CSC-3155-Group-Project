@@ -56,4 +56,4 @@ def home_view(request):
 
 def job_list(request):
     jobs = Joblisting.objects.all()
-    return render(request, 'job_list.html', {'jobs': jobs})
+    return render(request, 'search.html', {'jobs': jobs})

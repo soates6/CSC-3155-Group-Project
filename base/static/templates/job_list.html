@@ -10,12 +10,15 @@
     <ul>
         {% for job in jobs %}
             <li>
-                <h2>{{ job.title }}</h2>
+                <h2>{{ job.tImitle }}</h2>
                 <p><strong>Company:</strong> {{ job.company }}</p>
                 <p><strong>Location:</strong> {{ job.location }}</p>
                 <p><strong>Description:</strong> {{ job.description }}</p>
-                <p><strong>Salary:</strong> {{ job.salary }}</p>
+                <p><strong>Status:</strong> {{ job.date_posted }}</strong></p>
+                <p><strong>Salary:</strong> {{ job.salary|floatformat:0 }}</p>
             </li>
+        {% empty %}
+            <p>No jobs found. Try adjusting your filters.</p>
         {% endfor %}
     </ul>
 </body>

@@ -126,25 +126,24 @@
     <!-- Results Section -->
     <div class="results">
       <h3>Job Results</h3>
-      <!-- Sample Job Cards -->
-      <div class="job-card">
-        <h4>Software Developer</h4>
-        <p><strong>Company:</strong> Tech Solutions Inc.</p>
-        <p><strong>Location:</strong> Remote</p>
-        <p><strong>Status:</strong> <span class="status-flag">Potentially Fake</span></p>
-        <button class="apply-btn">Apply Now</button>
-      </div>
-
-      <div class="job-card">
-        <h4>Marketing Specialist</h4>
-        <p><strong>Company:</strong> Creative Media Ltd.</p>
-        <p><strong>Location:</strong> New York</p>
-        <p><strong>Status:</strong> Verified</p>
-        <button class="apply-btn">Apply Now</button>
-      </div>
+      {% for job in jobs %}
+        <div class="job-card">
+          <h4>{{ job.title }}</h4>
+          <p><strong>Company:</strong> {{ job.company }}</p>
+          <p><strong>Date Posted:</strong> {{ job.date_posted }}</p>
+          <p><strong>Location:</strong> {{ job.location }}</p>
+          <p><strong>Salary:</strong> ${{ job.salary|floatformat:0 }}</p>
+          <p><strong>Duration:</strong> {{ job.duration }}</p>
+          <p><strong>Job Requirements:</strong> {{ job.job_requirements }}</p>
+          <p><strong>Required Qualifications:</strong> {{ job.required_qualifications }}</p>
+          <p><strong>Description:</strong> {{ job.description }}</p>
+          <p><strong>Status:</strong> <span class="status-flag">{{ job.status }}</span></p>
+          <button class="apply-btn">Apply Now</button>
+        </div>
+      {% empty %}
+        <p>No jobs found. Try adjusting your filters.</p>
+      {% endfor %}
     </div>
-  </div>
-
   <footer>
     <nav>
       <P>Contact info: SafeApply.contact@gmail.com</P>
