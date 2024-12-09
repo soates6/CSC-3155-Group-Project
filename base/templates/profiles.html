@@ -16,7 +16,11 @@
       <a href="{% url 'home' %}">Home</a>
       <a href="{% url 'search' %}">Browse Jobs</a>
       <a href="{% url 'profiles' %}">Profile</a>
-      <a href="#">Log Out</a>
+      {% if user.is_authenticated %}
+        <a href="{% url 'logout' %}">Log Out</a>
+      {% else %}
+        <a href="{% url 'login' %}">Log In</a>
+      {% endif %}
     </nav>
   </header>
   <!-- Search Page Container -->
