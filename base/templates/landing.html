@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SafeApply - Welcome</title>
+  <link rel="stylesheet" href="{% static 'styles/styles.css' %}">
+</head>
+<body>
+  <!-- Landing Page Container -->
+  <div class="landing-container">
+    <!-- Logo -->
+    <div class="logo-container">
+      <img src="{% static 'images/SafeApplyLogo.png' %}" alt="SafeApply Logo" class="logo">
+    </div>
+
+    <!-- Welcome Message -->
+    <h1>Welcome to SafeApply</h1>
+    <p>Your trusted platform for finding genuine job opportunities.</p>
+
+    <!-- Action Buttons -->
+    <div class="button-group">
+      <a href="login.html" class="btn">Log In</a>
+      <a href="register.html" class="btn">Register</a>
+    </div>
+  </div>
+  <footer>
+    <nav>
+      <P>Contact info: SafeApply.contact@gmail.com</P>
+      <a href="terms_service.html">Terms of service</a>
+    </nav>
+    </footer>
+</body>
+</html>
