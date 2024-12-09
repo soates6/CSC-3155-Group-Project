@@ -18,6 +18,7 @@
     <h2>Login</h2>
     <form action="#" method="post">
       <div class="input-group">
+        {% csrf_token %}
         <label for="username">Username</label>
         <input type="text" id="username" name="username" required>
       </div>
