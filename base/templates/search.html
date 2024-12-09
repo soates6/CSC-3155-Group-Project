@@ -118,6 +118,7 @@
     <!-- Results Section -->
     <div class="results">
       <h3>Job Results</h3>
+
       {% for job in jobs %}
         <div class="job-card">
           <h4>{{ job.title }}</h4>
@@ -131,7 +132,27 @@
           <p><strong>Qualifications:</strong> {{ job.required_qualifications }}</p>
         </div>
       {% empty %}
-        <p>No jobs found for the selected city.</p>
+            <!-- Results Section -->
+            <div class="results">
+              <h3>Job Results</h3>
+              <!-- Sample Job Cards -->
+              <div class="job-card">
+                <h4>Software Developer</h4>
+                <p><strong>Company:</strong> Tech Solutions Inc.</p>
+                <p><strong>Location:</strong> Remote</p>
+                <p><strong>Status:</strong> <span class="status-flag">Potentially Fake</span></p>
+                <button class="apply-btn">Apply Now</button>
+              </div>
+            
+              <div class="job-card">
+                <h4>Marketing Specialist</h4>
+                <p><strong>Company:</strong> Creative Media Ltd.</p>
+                <p><strong>Location:</strong> New York</p>
+                <p><strong>Status:</strong> Verified</p>
+                <button class="apply-btn">Apply Now</button>
+              </div>
+            </div>
+            </div>
       {% endfor %}
     </div>
     </div>

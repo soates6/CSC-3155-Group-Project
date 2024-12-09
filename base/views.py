@@ -1,15 +1,14 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate, logout
-from django.contrib.auth.models import User
 from .forms import RegisterForm, LoginForm
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .models import Joblisting
 
-
 def landing(request):
     return render(request, 'landing.html')
 
+@login_required
 def home(request):
     return render(request, 'home.html')
 
@@ -17,35 +16,28 @@ def login_view(request):
     return render(request, 'login.html')
 
 def register(request):
-    if request.method == 'POST':
-        username = request.POST.get('username')
-        password = request.POST.get('password')
-
-        # Validate and create the user
-        if User.objects.filter(username=username).exists():
-            messages.error(request, 'Username already exists.')
-        else:
-            User.objects.create_user(username=username, password=password)
-            messages.success(request, 'Account created successfully!')
-            # Redirect to login page after successful registration
-            return redirect('login')
-
     return render(request, 'register.html')
 
+@login_required
 def search(request):
     return render(request, 'search.html')
 
 def terms_service(request):
     return render(request, 'terms_service.html')
 
+@login_required
+def profiles(request):
+    return render(request, 'profiles.html')
+
 def main(request):
     return render(request, 'main.html')
+
 
 def register_view(request):
     if request.method == "POST":
         form = RegisterForm(request.POST)
         if form.is_valid():
-            form.save()
+            form.save
             return redirect('home')
     else:
         form = RegisterForm()  
@@ -74,6 +66,3 @@ def home_view(request):
 def job_list(request):
     jobs = Joblisting.objects.all()
     return render(request, 'search.html', {'jobs': jobs})
-
-def profiles(request):
-    return render(request, 'profiles.html')
